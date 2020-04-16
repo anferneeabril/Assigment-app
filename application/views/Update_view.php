@@ -1,6 +1,4 @@
-<?php
 
-?>
 <div class="row">	
     <h1>Update Assigments</h1>
 	<div class="form-design">
