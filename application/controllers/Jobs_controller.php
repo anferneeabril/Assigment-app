@@ -24,8 +24,7 @@ class Jobs_controller extends CI_Controller {
 	}
 
 	public function insertData()
-	{  
-		
+	{  	
 		if ($this->input->post())
         {
             $random_jobs = $_POST["random_jobs"];
@@ -51,9 +50,15 @@ class Jobs_controller extends CI_Controller {
 	public function delete($id_jobs)
     {
         $this->db->where('id_jobs', $id_jobs);
-        $this->db->delete('assignments');
-        header('Location: http://localhost/Assigment-app/Jobs_controller/insertView');
-    }
-
-//	}
+		$this->db->delete('assignments');	
+		header('Location: http://localhost/Assigment-app/Jobs_controller/insertView');
+	
+	}
+	
+	// public function deleteRow($id_jobs)
+	// {
+	// 	$id_jobs = $query->row(5))
+	// 	$this->db->where('id_jobs', $id_jobs);
+	// 	$this->db->delete('assignments');
+	// }
 }

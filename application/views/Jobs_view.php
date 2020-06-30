@@ -10,18 +10,20 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </head>
 <body>
-	
+<div class="container">
 <?php
 
 foreach ($assignments as $job)
-
 {
-	 echo "$job->random_jobs<br>";
+	echo "<ul class='list-group'>";
+	echo "<li class= list-group-item active' > $job->random_jobs";
+	echo "</ul>";
 }
 
 ?>
 
-<a href="<?php echo base_url('Jobs_controller/insertView');?>" class="badge badge-success">Settigs</a>
+	<a href="<?php echo base_url('Jobs_controller/insertView');?>" class="badge badge-success">Settigs</a>
+</div>
 </body>
 </html>
 
