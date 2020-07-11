@@ -16,7 +16,8 @@ class Jobs_model extends CI_Model
     }
 
     // Update of the CRUD
-	public function updateJobs($id_jobs) {
+    public function updateJobs($id_jobs) 
+    {
 		$datos = array (
 			'random_jobs' => $this->input->post('random_jobs')
 		);

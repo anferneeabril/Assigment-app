@@ -11,6 +11,7 @@ class Jobs_controller extends CI_Controller {
 
 	public function index()
 	{
+		// $this->load->helper('url');
 		$job = new Jobs_model();
 		$jobs['assignments'] = $job->getJobs();
 		$this->load->view('Jobs_view', $jobs);
@@ -25,11 +26,10 @@ class Jobs_controller extends CI_Controller {
 
 	public function insertData()
 	{  	
-
 		if($this->input->post());
         {
 			$random_jobs = $_POST["random_jobs"];
-			$this->Jobs_model->setJobs($_POST);        
+			$this->Jobs_model->setJobs($_POST);        	
 			header('Location: http://localhost/Assigment-app/Jobs_controller/insertView');
 		}	
 	}
