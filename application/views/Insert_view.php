@@ -44,8 +44,6 @@
                             <td><a href='updateView/{$jobs->id_jobs}'>Update</a></td>
                             <td><a href='delete/{$jobs->id_jobs}'>Delete</a></td>
                             </tr>"; 
-
-                        // deleteRow($id_jobs);
                         }
                     ?>
                 </tbody>

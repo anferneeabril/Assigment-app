@@ -11,7 +11,6 @@ class Jobs_controller extends CI_Controller {
 
 	public function index()
 	{
-		// $this->load->helper('url');
 		$job = new Jobs_model();
 		$jobs['assignments'] = $job->getJobs();
 		$this->load->view('Jobs_view', $jobs);
