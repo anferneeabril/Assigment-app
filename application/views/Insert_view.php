@@ -19,7 +19,7 @@
                     <form method="post" class="form-design" action="<?php echo base_url('Jobs_controller/insertData/');?>">
                         <p>
                             <label for="">Assignment</label>
-                            <input type="text" required="true" name="random_jobs">
+                            <input type="text" required="true" name="random_jobs" name="random_jobs_delete">
                         </p>
         <p>
             <input type="submit" value="Save" id="disableButton" class="btn btn-primary">
