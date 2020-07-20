@@ -59,5 +59,5 @@ class Jobs_controller extends CI_Controller {
 		header('Location: http://localhost/Assigment-app/Jobs_controller/insertView');
 	}
 	
-	// ALTER TABLE assignments AUTO_INCREMENT = 1
+	/////// ALTER TABLE assignments AUTO_INCREMENT = 1
 }
