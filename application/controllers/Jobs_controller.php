@@ -7,6 +7,7 @@ class Jobs_controller extends CI_Controller {
 	{
 		parent:: __construct();
 		$this->load->model('Jobs_model');
+		$this->load->model('DataLose_model');
 	}
 
 	public function index()
@@ -28,10 +29,13 @@ class Jobs_controller extends CI_Controller {
 		if($this->input->post());
         {
 			$random_jobs = $_POST["random_jobs"];
-			$this->Jobs_model->setJobs($_POST);        	
+			$this->Jobs_model->setJobs($_POST);      
+			$this->DataLose_model->setLoseData($_POST);
+	  	
 			header('Location: http://localhost/Assigment-app/Jobs_controller/insertView');
 		}	
-	}
+
+}
 
 	public function updateView($id_jobs)
 	{
