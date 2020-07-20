@@ -30,13 +30,14 @@ class Jobs_controller extends CI_Controller {
         {
 			$random_jobs = $_POST["random_jobs"];
 			$this->Jobs_model->setJobs($_POST);      
+			
 			$random_jobs_delete = $_POST["random_jobs_delete"];
 			$this->DataLose_model->setLoseData($_POST);
-	  	
+
 			header('Location: http://localhost/Assigment-app/Jobs_controller/insertView');
 		}	
 
-}
+	}	
 
 	public function updateView($id_jobs)
 	{
