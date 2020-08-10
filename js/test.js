@@ -1,4 +1,4 @@
-$(function() {
+disbaleButton = $(function() {
     var colCount = 0;
     $('.colCount').each(function () 
     {
@@ -6,10 +6,12 @@ $(function() {
         {
             colCount += +$(this).attr('.colCount');
         } 
+
         else if (colCount === 6)
         {
             $("#disableButton").prop('disabled', true)
         }
+        
         else 
         {
             colCount++;

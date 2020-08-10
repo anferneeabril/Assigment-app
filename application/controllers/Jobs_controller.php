@@ -7,11 +7,16 @@ class Jobs_controller extends CI_Controller {
 	{
 		parent:: __construct();
 		$this->load->model('Jobs_model');
+		$this->load->model('User_model');
 		$this->load->model('DataLose_model');
-	}
+		$this->load->library('form_validation');	}
 
 	public function index()
 	{
+		$userView = new User_model();
+		$aut['user'] = $userView->getUserName();
+		$this->load->view('Auntentication_view', $aut);
+
 		$job = new Jobs_model();
 		$jobs['assignments'] = $job->getJobs();
 		$this->load->view('Jobs_view', $jobs);
@@ -22,27 +27,34 @@ class Jobs_controller extends CI_Controller {
 		$job = new Jobs_model();
 		$jobs['assignments'] = $job->getJobs();
 		$this->load->view('Insert_view', $jobs);
-	}
+	} 
 
 	public function insertData()
-	{  	
-		if($this->input->post());
-        {
-			$random_jobs = $_POST["random_jobs"];
-			$this->Jobs_model->setJobs($_POST);      
+	{
+		$this->form_validation->set_rules('random_jobs', 'Random Jobs', 'required|max_length[5]');
+		
+		if ($this->form_validation->run() == FALSE)
+		{
+			$this->insertView();
+			header('Location: http://localhost/Assigment-app/Jobs_controller/insertView');
+		}
 			
-			$random_jobs_delete = $_POST["random_jobs_delete"];
+		elseif ($this->input->post())
+		{			
+			$random_jobs = $_POST["random_jobs"];
+
+			$this->Jobs_model->setJobs($_POST);
 			$this->DataLose_model->setLoseData($_POST);
+			$this->insertView();
 
 			header('Location: http://localhost/Assigment-app/Jobs_controller/insertView');
-		}	
-
-	}	
+		}
+	}
 
 	public function updateView($id_jobs)
 	{
 		$jobs = $this->db->get_where('assignments', array('id_jobs' => $id_jobs))->row();
-        $this->load->view('Update_view', array('assignments' => $jobs));
+		$this->load->view('Update_view', array('assignments' => $jobs));
     }
 
     public function update($id_jobs) 

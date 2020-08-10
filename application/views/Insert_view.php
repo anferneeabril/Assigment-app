@@ -19,7 +19,7 @@
                     <form method="post" class="form-design" action="<?php echo base_url('Jobs_controller/insertData/');?>">
                         <p>
                             <label for="">Assignment</label>
-                            <input type="text" required="true" name="random_jobs" name="random_jobs_delete">
+                            <input type="text" required="true" name="random_jobs" name="" value="<?php echo set_value('random_jobs'); ?>">
                         </p>
         <p>
             <input type="submit" value="Save" id="disableButton" class="btn btn-primary">
@@ -52,4 +52,3 @@
         <a href="<?php echo base_url('Jobs_controller/');?>" class="badge badge-dark">Randdom Jobs</a>
 		<script type="text/javascript" src="http://localhost/Assigment-app/js/test.js" ></script>
 </div>
-      
