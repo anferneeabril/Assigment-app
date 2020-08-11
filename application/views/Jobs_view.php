@@ -22,7 +22,7 @@
 	?>
 
 	<a href="<?php echo base_url('Jobs_controller/insertView');?>" class="badge badge-success">Settigs</a>
-	<a href="<?php echo base_url('Sign_up_controller/index');?>" class="badge badge-success">Login</a>
+	<a href="<?php echo base_url('Login_controller/index');?>" class="badge badge-success">Login</a>
 	<a href="<?php echo base_url('Sign_up_controller/logout');?>" class="badge badge-success">Logout</a>
 		</div>
 	</body>
