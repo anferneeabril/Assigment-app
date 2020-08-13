@@ -1,10 +1,11 @@
+
 <?php 
 
-	foreach ($user as $userView) 
-	{   
-		echo "$userView->username";	
-    }
-
-
-    //echo $this->table->generate($user);
+foreach ($table1 as $table2)
+{
+	echo "<ul class='list-group'>";
+	echo "<li class= list-group-item active'>$table2->Lunes";
+	echo "<li class= list-group-item active'>$table2->Martes";
+	echo "</ul>";
+}
 ?>

@@ -3,7 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class User_model extends CI_Model  
 {
-
     public function setUser($name = "", $lastname = "", $username = "", $email = "", $password = "")
     {
         $this->db->insert('user', $name, $lastname, $username, $email, $password);
@@ -33,7 +32,6 @@ class User_model extends CI_Model
         $this->db->where('username', $username);
         $query = $this->db->get('user');
 
-        
         if($query->num_rows() > 0)
         {
             foreach($query->result() as $row)
@@ -60,12 +58,10 @@ class User_model extends CI_Model
             }
         }
     }
-    
-    public function userConnect()
-    {
 
-        $query = $this->db->get('user');
-        $ret = $query->row();
-        return $ret->username;
+    public function getTable($username)
+    {
+        $query = $this->db->get($username);
+        return $query->result();
     }
 }
