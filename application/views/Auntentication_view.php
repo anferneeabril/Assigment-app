@@ -1,11 +1,10 @@
+<?php
 
-<?php 
-
-foreach ($table1 as $table2)
+foreach ($username as $usernameAccount)
 {
 	echo "<ul class='list-group'>";
-	echo "<li class= list-group-item active'>$table2->Lunes";
-	echo "<li class= list-group-item active'>$table2->Martes";
+	echo "<li class= list-group-item active'>$usernameAccount->Lunes";
+	echo "<li class= list-group-item active'>$usernameAccount->Martes";
 	echo "</ul>";
 }
 ?>

@@ -11,7 +11,6 @@ class Login_controller extends CI_Controller {
         {
                 redirect('Private');
         }
-
             $this->load->library('form_validation');
             $this->load->model('User_model');
     }
@@ -23,21 +22,21 @@ class Login_controller extends CI_Controller {
 
     public function validation()
     {
-        $pass = $this->form_validation->set_rules('username', 'Username', 'required');
+        $usernameValidation = $this->form_validation->set_rules('username', 'Username', 'required');
         $this->form_validation->set_rules('password', 'Password', 'required');
         
         if($this->form_validation->run())
         {
-            $result = $this->User_model->validationUser($username = $this->input->post('username'), $this->input->post('password'));
+            $loginExistingUsername = $this->User_model->validationUser($username = $this->input->post('username'), $this->input->post('password'));
     
-        if($result == '')
+        if($loginExistingUsername == '')
         {
             redirect('Login');
         }
         
         else
         {
-            $this->session->set_flashdata('message',$result);
+            $this->session->set_flashdata('message',$loginExistingUsername);
             redirect('Login');
         }
     }

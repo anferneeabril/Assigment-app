@@ -18,16 +18,17 @@ class Private_controller extends CI_Controller
 
     public function index()
     {
-        echo '<br /><br /><br /><h1 align="center">Welcome User</h1>';
+        $username = $this->session->userdata('username');
+
+        echo '<br /><br /><br /><h1 align="center">Welcome ';
+        echo $username;
+        echo '</h1>';
         echo '<p align="center"><a href="'.base_url().'Private_controller/logout">Logout</a></p>';
         
-        $username = $this->session->userdata('username');
-        echo $username;
+        $tableUser = new User_model();
+        $sendUserTabletoView['username'] = $this->User_model->getTable($username);
 
-        $table = new User_model();
-        $tables['table1'] = $this->User_model->getTable($username);
-
-        $this->load->view('Auntentication_view', $tables);
+        $this->load->view('Auntentication_view', $sendUserTabletoView);
     }
 
     public function logout()

@@ -46,52 +46,10 @@ class Sign_up_controller extends CI_Controller
         $this->load->view('Login_view');   
     }
     
-    // public function loginSucefully()
-    // {
-    //     $this->form_validation->set_rules('username', 'Username', 'required');
-    //     $this->form_validation->set_rules('password', 'Password', 'required');
-       
-    //     if ($this->form_validation->run() == FALSE) {
-	// 		$this->load->view('Login_view');
-    //     } 
-    //     else 
-    //     {
-    //         $username = $this->input->post('username');
-	// 		$password = $this->input->post('password');
-
-    //         //$user = $this->db->get_where('user', array('username' => $username, 'password' => $password));
-            
-    //         $user = $this->db->get_where('user',['username' => $username])->row();
-    //     }
-    //         if(!$user) {
-	// 			$this->session->set_flashdata('login_error', 'Please check your email or password and try again.', 300);
-    //             echo "error";
-    //             redirect('http://localhost/Assigment-app/Jobs_controller/index');    
-	// 		}
-
-            
-	// 		if(!password_verify($password,$user->password)) {
-	// 			$this->session->set_flashdata('login_error', 'Please check your email or password and try again.', 300);
-    //            echo "error";
-    //              redirect('http://localhost/Assigment-app/Sign_up_controller/login');    
-	// 		}
-    //         $newdata = array(
-    //             'username'  => $user->$username,
-    //             'password'  => $user->$password,
-    //     );
-        
-    //     $this->session->set_userdata($newdata);
-
-    //     redirect('http://localhost/Assigment-app/Jobs_controller/index');    
-    //     echo 'Login success!'; exit;
-    //     // return $username;
-    // }
-
     public function logout()
     {
         $this->session->sess_destroy();
         redirect('http://localhost/Assigment-app/Sign_up_controller/login');    
     }
-
 }
 ?>

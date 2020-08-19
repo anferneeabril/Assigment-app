@@ -13,10 +13,6 @@ class Jobs_controller extends CI_Controller {
 
 	public function index()
 	{
-		// $userView = new User_model();
-		// $aut['user'] = $userView->getUserName();
-		// $this->load->view('Auntentication_view', $aut);
-
 		$job = new Jobs_model();
 		$jobs['assignments'] = $job->getJobs();
 		$this->load->view('Jobs_view', $jobs);
