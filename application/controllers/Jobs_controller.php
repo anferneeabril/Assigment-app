@@ -9,7 +9,8 @@ class Jobs_controller extends CI_Controller {
 		$this->load->model('Jobs_model');
 		$this->load->model('User_model');
 		$this->load->model('DataLose_model');
-		$this->load->library('form_validation');	}
+		$this->load->library('form_validation');	
+	}
 
 	public function index()
 	{
