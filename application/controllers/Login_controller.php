@@ -9,7 +9,7 @@ class Login_controller extends CI_Controller {
 
         if($this->session->userdata('username'))
         {
-                redirect('Private');
+            redirect('Private');
         }
             $this->load->library('form_validation');
             $this->load->model('User_model');
