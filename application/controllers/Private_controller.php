@@ -6,7 +6,6 @@ class Private_controller extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-     
 
         if($test = !$this->session->userdata('username'))
         {
@@ -14,26 +13,19 @@ class Private_controller extends CI_Controller
         }
 
         $this->load->model('User_model');
+        $this->load->helper('url'); 
     }
-
+    
     public function index()
     {
-        
         $username = $this->session->userdata('username');
-        
-        // echo '<br /><br /><br /><h1 align="center">Welcome ';
-        // echo $username;
-        // echo '</h1>';
-        // echo '<p align="center"><a href="'.base_url().'Private_controller/logout">Logout</a></p>';
-        
-        
         $tableUser = new User_model();
 
-        $usernameConnected['usernameLogin'] = $this->User_model->getTable('user');
-        $this->load->view('HeaderHome_view', $usernameConnected);
+        $usernameConnected['usernameLogin'] = $username;
+        $this->load->view('HomeHeader_view', $usernameConnected);
         
         $sendUserTabletoView['username'] = $this->User_model->getTable($username);
-        $this->load->view('ContentHome_view', $sendUserTabletoView);
+        $this->load->view('HomeContent_view', $sendUserTabletoView);
     }
 
     public function logout()

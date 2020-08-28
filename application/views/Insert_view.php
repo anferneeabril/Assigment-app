@@ -50,5 +50,5 @@
         </table>
     </div>
         <a href="<?php echo base_url('Jobs_controller/');?>" class="badge badge-dark">Randdom Jobs</a>
-		<script type="text/javascript" src="http://localhost/Assigment-app/js/test.js" ></script>
+		<script type="text/javascript" src="http://localhost/Assigment-app/js/btnCountCtrl.js" ></script>
 </div>

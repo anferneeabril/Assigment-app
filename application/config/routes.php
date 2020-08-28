@@ -55,4 +55,5 @@ $route['translate_uri_dashes'] = FALSE;
 $route['Login'] = 'Login_controller/index';
 $route['Jobs'] = 'Jobs_controller/index';
 $route['Private'] = 'Private_controller/index';
-//$route['Login'] = 'Sign_up_controller/index'
+$route['SignUp'] = 'Sign_up_controller/index';
+$route['LogOut'] = 'Sign_up_controller/logout';
