@@ -52,4 +52,4 @@ class Sign_up_controller extends CI_Controller
         redirect('http://localhost/Assigment-app/Sign_up_controller/login');    
     }
 }
-// ?>
+ ?>

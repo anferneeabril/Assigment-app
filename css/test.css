@@ -1,8 +1,18 @@
 h5 {
     display: inline;
-    color: red;
+    /* color: red; */
 }
 
-.red {
-    background-color: blue;
+
+
+/* .active {
+    display: inline;
 }
+
+.list-group {
+    display: inline;
+}
+
+.list-group-item {
+    display: inline;
+} */
