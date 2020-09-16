@@ -20,7 +20,7 @@
     <div class="navbar-nav">
       <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
       <a class="nav-link active" href="<?php echo base_url('Jobs_controller/insertView');?>">Add Jobs</a>
-      <a class="nav-link" href="#">Pricing</a>
+      <a class="nav-link" id="randomClick" href="#">Random Jobs</a>
       <a class="nav-link active" href="<?php echo base_url('LogOut');?>" tabindex="-1" ardisabled="true">Logout</a>
     </div>
   </div>
